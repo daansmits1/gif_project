@@ -6,3 +6,5 @@ import giphypop
 def index():
 	search = request.values.get('search')
 	return render_template('index.html')
+
+app.run(debug=True)
