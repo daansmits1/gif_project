@@ -38,15 +38,13 @@
         <!-- GIF Search Results -->
         <div class="container">
             <div class="card-columns">
-            <script>
-                {% for result in results %}
+            {% for result in results: %}
                 <div class="card">
-                  <a href={{ result.media_url }} target="_blank">
-                    <img class="card-img-top" src={{ result.url }} style="width:100%; height:auto;">
-                </a>
+                    <a href="{{ result.url }}" target="_blank">
+                        <img class="card-img-top" src="{{ result.media_url }}" style="width:100%; height:auto;">
+                    </a>
                 </div>
-                {% endfor %}
-            </script>
+            {% endfor %}
             </div>
         </div>
 

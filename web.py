@@ -5,13 +5,13 @@ g = giphypop.Giphy()
 
 @app.route('/')
 def index():
-	search = request.values.get('search')
 	return render_template('index.html')
 
 @app.route('/results')
 def results(): #needs to be right under the app line
-	results = g.search('search')
-	return render_template('results.html')
+	search = request.values.get('search_terms')
+	results = g.search(search)
+	return render_template('results.html', search=search, results=results)
 
 @app.route('/about')
 def about(): #needs to be right under the app line
